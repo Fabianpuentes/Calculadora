@@ -1,0 +1,33 @@
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Fabian Puentes López
+ */
+@Path("suma")
+public class suma {
+    @GET
+    public String operar (@QueryParam("num1")int n1,@QueryParam("num2") int n2){
+    int sum;// valor1, valor2;
+    double iva;
+    double tot;
+    //System.out.println("Ingrese el valor 1");
+    //valor1=n1;
+    //System.out.println("Ingrese el valor 2");
+    //valor2=n2;
+        sum=n1+n2;
+        iva=sum*0.19;
+        tot=sum+iva;
+        return String.valueOf("La suma de los valores ingresados es: " +sum+ 
+                              ", El IVA (19%) de los valores es: " +iva+ 
+                              ", Aplicando el IVA (19%), el total a pagar es: " +tot);
+    }
+}
